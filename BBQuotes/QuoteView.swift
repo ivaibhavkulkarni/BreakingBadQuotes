@@ -14,7 +14,7 @@ struct QuoteView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Image(show.lowercased().replacingOccurrences(of: " ", with: " "))
+                Image(show.lowercased().replacingOccurrences(of: " ", with: ""))
                     .resizable()
                     .frame(width: geo.size.width * 2.7, height: geo.size.height * 1.2)
                 VStack{
@@ -50,7 +50,9 @@ struct QuoteView: View {
                     Spacer()
                     
                     Button{
-                        
+                        Task{
+                            await vm.getData(for: show)
+                        }
                     } label: {
                         Text("Get Random Quote")
                         .font(.title3)
@@ -71,6 +73,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView(show: "breakingbad")
+    QuoteView(show: "Breaking Bad")
         .preferredColorScheme(.dark)
 }

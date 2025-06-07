@@ -11,11 +11,11 @@ struct ContentView: View {
     var body: some View {
         TabView{
             Tab("Breaking Bad", systemImage: "tortoise"){
-                QuoteView(show: "BreakingBad")
+                QuoteView(show: "Breaking Bad")
                     .toolbarBackgroundVisibility(.visible, for: .tabBar)
             }
             Tab("Better Call Saul", systemImage: "briefcase"){
-                QuoteView(show: "BetterCallSaul")
+                QuoteView(show: "Better Call Saul")
                     .toolbarBackgroundVisibility(.visible, for: .tabBar)
             }
         }
